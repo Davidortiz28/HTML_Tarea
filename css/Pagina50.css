@@ -2,97 +2,112 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 body {
-    background-color: #fff;
+    background: linear-gradient(180deg, #b8c6ca 0%, #e8d5b5 100%); /* Degradado de fondo */
+    min-height: 100vh;
+    padding: 80px 20px;
     display: flex;
     justify-content: center;
-    padding: 60px 20px;
 }
 
-.hero-container {
-    max-width: 1200px;
+.main-section {
+    max-width: 1100px;
     width: 100%;
 }
 
-/* CABECERA: Título a la izquierda, texto a la derecha */
-.hero-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+/* HEADER */
+.header-content {
+    text-align: center;
     margin-bottom: 60px;
-    gap: 40px;
 }
 
 .main-title {
-    font-size: 4.5rem; /* Tamaño grande e impactante */
+    font-size: 2.5rem;
     font-weight: 700;
     color: #1a1a1a;
-    flex: 1;
-    letter-spacing: -2px;
+    max-width: 700px;
+    margin: 0 auto 20px;
 }
 
-.header-right {
-    flex: 0 1 400px; /* No crece, puede encogerse, base de 400px */
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-.description {
-    font-size: 1.1rem;
-    color: #555;
-    line-height: 1.5;
+.main-subtitle {
+    color: #4a4a4a;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
 }
 
 .btn-get-started {
-    align-self: flex-start;
-    background-color: #222;
-    color: #fff;
-    padding: 14px 35px;
-    border-radius: 12px;
+    display: inline-block;
+    background-color: #262626;
+    color: white;
+    padding: 12px 35px;
+    border-radius: 25px;
     text-decoration: none;
     font-weight: 500;
-    transition: background-color 0.3s ease;
+    transition: transform 0.2s;
 }
 
 .btn-get-started:hover {
-    background-color: #444;
+    transform: translateY(-3px);
 }
 
-/* IMAGEN INFERIOR */
-.image-wrapper {
-    width: 100%;
-    height: 600px; /* Altura fija o relativa */
-    overflow: hidden;
-    border-radius: 8px; /* Bordes ligeramente suavizados como en el diseño */
+/* BENTO GRID (GALERÍA) */
+.bento-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr; /* Tres columnas */
+    grid-template-rows: repeat(2, 180px);
+    gap: 15px;
 }
 
-.full-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Asegura que la imagen llene el espacio sin deformarse */
+.grid-item {
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    position: relative;
+    padding: 20px;
+    display: flex;
+    align-items: flex-end;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.grid-item p {
+    font-size: 0.75rem;
+    background: rgba(0,0,0,0.2);
+    backdrop-filter: blur(5px);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.title-label {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #333; /* En la imagen central es oscuro */
+}
+
+/* Áreas específicas del Grid */
+.item-lg {
+    grid-row: span 2; /* Ocupa las dos filas de altura */
+}
+
+.item-wide {
+    grid-column: 1 / 2; /* Se posiciona abajo a la izquierda */
+    grid-row: 2;
+    width: 215%; /* Truco para que ocupe espacio extra hacia la derecha */
+    margin-top: 195px; /* Ajuste manual para la fila extra */
 }
 
 /* RESPONSIVO */
-@media (max-width: 900px) {
-    .hero-header {
-        flex-direction: column;
-        gap: 20px;
+@media (max-width: 800px) {
+    .bento-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
     }
-    
-    .main-title {
-        font-size: 3rem;
-    }
-
-    .header-right {
-        flex: none;
-        width: 100%;
-    }
-
-    .image-wrapper {
-        height: 400px;
-    }
+    .item-lg, .item-wide { grid-row: auto; grid-column: auto; width: 100%; margin-top: 0; }
 }

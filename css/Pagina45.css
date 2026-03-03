@@ -1,3 +1,4 @@
+*/* CONFIGURACIÓN BASE */
 * {
     margin: 0;
     padding: 0;
@@ -6,108 +7,135 @@
 }
 
 body {
-    background: linear-gradient(180deg, #b8c6ca 0%, #e8d5b5 100%); /* Degradado de fondo */
-    min-height: 100vh;
-    padding: 80px 20px;
+    background-color: #f0f0f0;
     display: flex;
     justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
-.main-section {
-    max-width: 1100px;
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* El panel derecho es ligeramente más ancho */
     width: 100%;
+    max-width: 1200px;
+    height: 80vh;
+    background-color: #fff;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
 }
 
-/* HEADER */
-.header-content {
-    text-align: center;
-    margin-bottom: 60px;
+/* LADO IZQUIERDO */
+.left-panel {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-block {
+    flex: 1.5;
+    background-color: #2a2a2a; /* Fondo oscuro del título */
+    color: white;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: radial-gradient(circle at top right, #444, transparent);
 }
 
 .main-title {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     font-weight: 700;
-    color: #1a1a1a;
-    max-width: 700px;
-    margin: 0 auto 20px;
+    line-height: 1.1;
+    margin-bottom: 20px;
 }
 
-.main-subtitle {
-    color: #4a4a4a;
-    max-width: 600px;
-    margin: 0 auto 30px;
-    line-height: 1.6;
+.hero-desc {
+    color: #ccc;
+    font-family: 'Courier New', monospace; /* Estilo de máquina de escribir */
+    margin-bottom: 30px;
+    font-size: 0.9rem;
 }
 
 .btn-get-started {
-    display: inline-block;
-    background-color: #262626;
-    color: white;
-    padding: 12px 35px;
-    border-radius: 25px;
+    align-self: flex-start;
+    background: white;
+    color: black;
+    padding: 12px 30px;
+    border-radius: 50px;
     text-decoration: none;
-    font-weight: 500;
-    transition: transform 0.2s;
+    font-weight: 600;
+    font-size: 0.8rem;
 }
 
-.btn-get-started:hover {
-    transform: translateY(-3px);
-}
-
-/* BENTO GRID (GALERÍA) */
-.bento-grid {
+.sub-blocks {
+    flex: 1;
     display: grid;
-    grid-template-columns: 1fr 1.5fr 1fr; /* Tres columnas */
-    grid-template-rows: repeat(2, 180px);
-    gap: 15px;
+    grid-template-columns: 1fr 1fr;
 }
 
-.grid-item {
-    background-size: cover;
-    background-position: center;
-    border-radius: 20px;
-    position: relative;
+.info-card {
     padding: 20px;
+    border: 0.5px solid #eee;
     display: flex;
-    align-items: flex-end;
-    color: white;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    flex-direction: column;
 }
 
-.grid-item p {
-    font-size: 0.75rem;
-    background: rgba(0,0,0,0.2);
-    backdrop-filter: blur(5px);
-    padding: 10px;
+.num {
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.tagline {
+    font-size: 0.7rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.card-img-placeholder {
+    flex: 1;
+    overflow: hidden;
     border-radius: 10px;
 }
 
-.title-label {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-weight: bold;
-    font-size: 1.2rem;
-    color: #333; /* En la imagen central es oscuro */
+.card-img-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-/* Áreas específicas del Grid */
-.item-lg {
-    grid-row: span 2; /* Ocupa las dos filas de altura */
+/* LADO DERECHO */
+.right-panel {
+    background-color: #e5e5e7; /* Gris metálico claro */
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    position: relative;
 }
 
-.item-wide {
-    grid-column: 1 / 2; /* Se posiciona abajo a la izquierda */
-    grid-row: 2;
-    width: 215%; /* Truco para que ocupe espacio extra hacia la derecha */
-    margin-top: 195px; /* Ajuste manual para la fila extra */
+.top-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.main-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mac-img {
+    max-width: 80%;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.2));
 }
 
 /* RESPONSIVO */
-@media (max-width: 800px) {
-    .bento-grid {
+@media (max-width: 900px) {
+    .container {
         grid-template-columns: 1fr;
-        grid-template-rows: auto;
+        height: auto;
     }
-    .item-lg, .item-wide { grid-row: auto; grid-column: auto; width: 100%; margin-top: 0; }
 }
