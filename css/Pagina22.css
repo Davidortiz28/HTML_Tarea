@@ -1,0 +1,133 @@
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #03051a; /* Fondo azul muy oscuro como la imagen */
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+.dashboard {
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* HEADER: Título y Arcos */
+.hero-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.main-title {
+    font-size: 4.5rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 30px;
+}
+
+.description {
+    color: #a0a0b0;
+    max-width: 450px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.btn-explore {
+    display: inline-block;
+    background: white;
+    color: black;
+    padding: 12px 35px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.top-visuals {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+/* Estilo de los Arcos Superiores */
+.pill-frame {
+    flex: 1;
+    height: 350px;
+    border-radius: 0 0 150px 150px; /* Redondeado solo abajo para el efecto de arco */
+    overflow: hidden;
+    background: #1a1c3a;
+}
+
+.pill-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* SECCIÓN MEDIA */
+.middle-layout {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.rounded-img {
+    width: 100%;
+    border-radius: 30px;
+}
+
+.steps-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.step .number {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.step p {
+    color: #a0a0b0;
+    font-size: 0.9rem;
+}
+
+/* GALERÍA INFERIOR */
+.bottom-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+    .hero-top, .middle-layout, .bottom-gallery {
+        grid-template-columns: 1fr;
+    }
+    .main-title { font-size: 3rem; }
+}

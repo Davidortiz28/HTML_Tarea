@@ -1,0 +1,94 @@
+/* RESET GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif; /* Sugerencia de fuente moderna */
+}
+
+/* CONTENEDOR PRINCIPAL: Grid de dos columnas */
+.split-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide la pantalla en dos mitades iguales */
+    min-height: 100vh;
+    align-items: center;
+}
+
+/* ESTILOS DE LA IMAGEN (IZQUIERDA) */
+.image-container {
+    height: 100%;
+    width: 100%;
+}
+
+.side-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantiene la proporción de la imagen sin deformarla */
+    display: block;
+}
+
+/* ESTILOS DEL CONTENIDO (DERECHA) */
+.content-container {
+    padding: 80px 10%; /* Espaciado interno generoso para respiración visual */
+}
+
+.title {
+    font-size: 3rem;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.main-description {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 450px;
+}
+
+.btn-explore {
+    display: inline-block;
+    background-color: #262626;
+    color: white;
+    padding: 12px 35px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    margin-bottom: 60px;
+}
+
+/* ESTILOS DE LOS PASOS NUMERADOS (01, 02) */
+.steps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.step-number {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #999; /* Color gris suave para los números */
+    margin-bottom: 10px;
+}
+
+.step-text {
+    color: #555;
+    line-height: 1.5;
+    max-width: 450px;
+}
+
+/* AJUSTES PARA DISPOSITIVOS MÓVILES */
+@media (max-width: 900px) {
+    .split-section {
+        grid-template-columns: 1fr; /* En móviles, la imagen va arriba y el texto abajo */
+    }
+    
+    .image-container {
+        height: 400px;
+    }
+
+    .title {
+        font-size: 2.2rem;
+    }
+}

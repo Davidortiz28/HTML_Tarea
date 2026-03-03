@@ -1,0 +1,115 @@
+/* CONFIGURACIÓN GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fff;
+    font-family: 'Times New Roman', serif; /* Para los títulos elegantes */
+    padding: 50px;
+}
+
+.page-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    position: relative;
+}
+
+/* TÍTULOS Y TEXTOS */
+.serif-title {
+    font-size: 3.5rem;
+    font-weight: 400;
+    line-height: 1.1;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.description {
+    font-family: sans-serif;
+    color: #666;
+    max-width: 300px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.btn-green {
+    display: inline-block;
+    background-color: #4f7c61; /* Verde naturaleza */
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 20px;
+    font-family: sans-serif;
+    font-size: 0.9rem;
+}
+
+/* IMÁGENES ESTILO PÍLDORA */
+.pill-img {
+    border-radius: 500px; /* Crea la forma de arco/píldora */
+    object-fit: cover;
+    display: block;
+}
+
+.small { width: 140px; height: 220px; }
+.medium { width: 160px; height: 260px; }
+.large { width: 300px; height: 500px; }
+
+/* AJUSTES DE COLUMNAS */
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom-images, .top-images {
+    display: flex;
+    gap: 20px;
+    margin-top: 50px;
+}
+
+/* TEXTO CURVO SVG */
+.curved-text-container {
+    text-align: center;
+}
+
+.svg-text {
+    font-family: serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    fill: #2f4f3c;
+    text-transform: uppercase;
+}
+
+/* ELEMENTOS DECORATIVOS */
+.star-deco {
+    position: absolute;
+    top: 100px;
+    left: 320px;
+    font-size: 2rem;
+    color: #2f4f3c;
+}
+
+.star-icon {
+    font-size: 2rem;
+    color: #2f4f3c;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.small-desc {
+    font-family: sans-serif;
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 40px;
+    max-width: 250px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 1024px) {
+    .page-container { flex-direction: column; align-items: center; text-align: center; }
+    .bottom-images, .top-images { justify-content: center; }
+}

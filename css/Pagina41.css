@@ -1,0 +1,141 @@
+/* CONFIGURACIÓN BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* El panel derecho es ligeramente más ancho */
+    width: 100%;
+    max-width: 1200px;
+    height: 80vh;
+    background-color: #fff;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+/* LADO IZQUIERDO */
+.left-panel {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-block {
+    flex: 1.5;
+    background-color: #2a2a2a; /* Fondo oscuro del título */
+    color: white;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: radial-gradient(circle at top right, #444, transparent);
+}
+
+.main-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero-desc {
+    color: #ccc;
+    font-family: 'Courier New', monospace; /* Estilo de máquina de escribir */
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+}
+
+.btn-get-started {
+    align-self: flex-start;
+    background: white;
+    color: black;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.sub-blocks {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.info-card {
+    padding: 20px;
+    border: 0.5px solid #eee;
+    display: flex;
+    flex-direction: column;
+}
+
+.num {
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.tagline {
+    font-size: 0.7rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.card-img-placeholder {
+    flex: 1;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.card-img-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* LADO DERECHO */
+.right-panel {
+    background-color: #e5e5e7; /* Gris metálico claro */
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    position: relative;
+}
+
+.top-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.main-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mac-img {
+    max-width: 80%;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.2));
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+}
